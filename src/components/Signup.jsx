@@ -34,7 +34,7 @@ const Signup = () => {
       <div>
         <h1 className='text-2xl font-bold py-2'>Sign up for your account!</h1>
         <p className='py-2'>Already have an account? <Link className='underline' to='/signin'>Sign in.</Link></p>
-        {error && <p className='color-red'>{error}</p>}
+        {error && <p className='text-red-600'>{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className='flex flex-col py-2'>
             <label className='py-2 font-medium'>Email Address</label>

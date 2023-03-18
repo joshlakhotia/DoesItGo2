@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Account from "./Account";
 import Signin from "./Signin";
 import Signup from "./Signup";
-import Navbar from "./Navbar";
 import Home from "./Home";
 import { AuthContextProvider } from "../context/AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -17,7 +17,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/account" element={
+          <ProtectedRoute>
+            <Account />
+          </ProtectedRoute>} 
+        />
       </Routes>
     </AuthContextProvider>
   );
